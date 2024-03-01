@@ -35,7 +35,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
             </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href="#events">
-                Oor Neighborhoods
+                Our Neighborhoods
               </Link>
             </Button>
           </div>

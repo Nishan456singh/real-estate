@@ -5,6 +5,12 @@ const CreateEvent = () => {
   const { sessionClaims } = auth();
 
   const userId = sessionClaims?.userId as string;
+  const particularUserId = 'sjhomes1359@gmail.com'; // Replace with the actual user ID
+
+  if (userId !== particularUserId) {
+    return null; // Or return a message saying the user is not authorized
+  }
+
   return (
     <>
     <section className="bg-primary-50 bg-dotted-pattern bg-cover bg-center

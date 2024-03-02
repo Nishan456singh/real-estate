@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: 'Simranjit Saini',
   description: 'We find the best homes for you, faster then making butter chicken.',
   icons: {
-    icon: '/assets/images/logo.jpg'
+    icon: 'S'
   }
 }
 

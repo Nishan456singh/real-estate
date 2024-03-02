@@ -1,3 +1,4 @@
+import Contact from "@/components/shared/Contact"
 import Footer from "@/components/shared/Footer"
 import Header from "@/components/shared/Header"
 
@@ -10,6 +11,7 @@ export default function RootLayout({
     <div className="flex h-screen flex-col">
       <Header />
       <main className="flex-1">{children}</main>
+      <Contact />
       <Footer />
     </div>
   )

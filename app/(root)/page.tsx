@@ -22,12 +22,11 @@ export default async function Home({ searchParams }: SearchParamProps) {
   });
   return (
     <>
-      <section className="bg-primary-50 bg-dotted-pattern bg-contain
-    py-5 md:py-10">
+      <section className="bg-primary-50 bg-contain bg-custom py-5 md:py-10">
         <div className="wrapper grid grid-cols-1 gap-5 md:grid-cols-2 2xl:gap-0">
           <div className="flex flex-col justify-center gap-8">
             <h1 className="h1-bold">Is that HOME, you are Dreaming off ?
-              <br  />Let's make your DREAM Comes True</h1>
+              <br />Let's make your DREAM Comes True</h1>
             <p className="p-regular-20 md:p-regular-24">"I am honoured to help you find your next home.
               My experience working in the GTA has allowed me to gain vast knowledge about this marketplace.
               I know what buyers want, and what sellers can command on the open market.
@@ -41,11 +40,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
             </Button>
           </div>
 
-          <Image src="/assets/images/hero.png"
-            width={1000}
-            height={1000}
-            alt={"hero"}
-            className="max-h-[70vh] object-contain object-center 2xl:max-h[50vh]" />
+          <video src="/assets/video/real.mp4" className="w-50 h-26 rounded-lg" autoPlay loop muted />
         </div>
       </section>
 

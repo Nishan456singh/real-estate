@@ -2,6 +2,7 @@
 import { withUt } from 'uploadthing/tw';
 
 module.exports = withUt({
+  mode: 'jit',
   darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',

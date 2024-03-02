@@ -34,6 +34,16 @@
 
     --radius: 0.5rem;
   }
+  .bg-custom {
+    background-image: url('/assets/images/background.jpg');
+  }
+  
+  .bg-set {
+    background-image: url('/assets/images/contact.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
   .dark {
     --background: 222.2 84% 4.9%;

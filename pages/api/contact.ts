@@ -2,23 +2,22 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com', // replace with your SMTP server host
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      service: 'gmail',
+      port: 465,
       auth: {
-        user: 'nishan456singh@gmail.com', // replace with your email
+        user: 'nishan456singh@gmail.com', // replace your email
         pass: '100776106135', // replace with your password
       },
     });
 
     const mailOptions = {
       from: 'nishan456singh@gmail.com', // replace with your email
-      to: 'nishan456singh@gmail.com', // replace with your email
+      to: 'kaurc7490@gmail.com', // replace with your email
       subject: `New message from ${name}`,
       text: `
         Name: ${name}
@@ -37,4 +36,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   } else {
     res.status(405).json({ status: 'Method not allowed' });
   }
-}
+};

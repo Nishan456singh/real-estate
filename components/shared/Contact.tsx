@@ -3,7 +3,6 @@
 import { useState, FormEvent } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { sendContactForm } from '../../lib/api';
 
 const ContactPage = () => {
   const [name, setName] = useState('');
@@ -13,16 +12,24 @@ const ContactPage = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
-    try {
-      await sendContactForm(name, email, message);
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (response.ok) {
       toast('Message sent successfully!');
       setName('');
       setEmail('');
       setMessage('');
-    } catch (error) {
+    } else {
       toast('An error occurred. Please try again.');
     }
   };
+
 
   return (
    <section className='border bg-set'>

@@ -2,20 +2,21 @@ import instagram from '@/public/assets/icons/instagram.png';
 import tiktok from '@/public/assets/icons/tiktok.png';
 import facebook from '@/public/assets/icons/facebook.png';
 
+
 export const headerLinks = [
-    {
-      label: 'Home',
-      route: '/',
-    },
-    {
-      label: 'Create Event',
-      route: '/events/create',
-    },
-    {
-      label: 'My Profile',
-      route: '/profile',
-    },
-  ]
+  {
+    label: 'Home',
+    route: '/',
+  },
+  {
+    label: 'Create Event',
+    route: '/events/create',   
+  },
+  {
+    label: 'My Profile',
+    route: '/profile',
+  },
+]
   
   export const eventDefaultValues = {
     title: '',

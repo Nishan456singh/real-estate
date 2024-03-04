@@ -7,6 +7,7 @@ import { getAllEvents } from "@/lib/actions/event.actions";
 import { SearchParamProps } from "@/types";
 import Image from "next/image"
 import Link from "next/link"
+import TestimonialCards from "@/components/shared/TestimonialCards";
 
 export default async function Home({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
@@ -45,11 +46,9 @@ export default async function Home({ searchParams }: SearchParamProps) {
       </section>
 
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
-        <h2 className="h2-bold">Trusted by <br /> Thousands of Customers
-        </h2>
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          <Search />
+          {/* <Search /> */}
           <CategoryFilter />
         </div>
         <Collection
@@ -60,6 +59,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
           limit={3}
           page={page}
           totalPages={events?.totalPages} />
+          <TestimonialCards /> 
+          <Contact />
       </section>
     </>
   )

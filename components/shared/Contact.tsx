@@ -1,34 +1,27 @@
 "use client"
 
-import { useState, FormEvent } from 'react';
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
+import axios from 'axios';
 
 const ContactPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch('/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ name, email, message }),
-    });
-
-    if (response.ok) {
-      toast('Message sent successfully!');
+    try {
+      await axios.post('/api/contact', { name, email, message });
+      alert('Message sent successfully!');
       setName('');
       setEmail('');
       setMessage('');
-    } else {
-      toast('An error occurred. Please try again.');
+    } catch (error) {
+      alert('An error occurred. Please try again later.');
     }
   };
+
 
 
   return (
@@ -67,7 +60,6 @@ const ContactPage = () => {
           <input type="submit" value="Submit" className='bg-indigo-500 cursor-pointer rounded-full p-3 w-fit text-white font-bold shadow-md shadow-primary mb-7' />
         </div>
       </form>
-      <ToastContainer />
     </div>
     
    </section>

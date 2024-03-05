@@ -7,12 +7,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const { name, email, message } = req.body;
 
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      port: 465,
-      auth: {
-        user: 'nishan456singh@gmail.com', // replace your email
-        pass: '100776106135', // replace with your password
-      },
+        host: 'smtp.gmail.com',
+        port: 567,
+        secure: true,
+        auth: {
+            user: 'nishan456singh@gmail.com', // replace your email
+            pass: '100776106135', // replace with your password
+        },
     });
 
     const mailOptions = {

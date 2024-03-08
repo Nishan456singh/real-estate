@@ -19,9 +19,9 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-20">
+      <div className="flex justify-center mt-6">
         <p>
-          © 2024 <strong>Nishan Singh</strong>. All rights reserved.
+          © 2024. All rights reserved.   <strong> Design & Developed by </strong> Nishan Singh
         </p>
       </div>
     </footer>

@@ -1,13 +1,15 @@
-
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from '../ui/button';
 import { IEvent } from '@/lib/database/models/event.model';
 import { loadStripe } from '@stripe/stripe-js';
 import { checkoutOrder } from '@/lib/actions/order.actions';
+import ContactPage from './Contact'; 
 
 loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
 
 const Checkout = ({ event, userId}: {event: IEvent, userId:string}) => {
+    const [showContact, setShowContact] = useState(false);
+
     useEffect(() => {
         // Check to see if this is a redirect back from Checkout
         const query = new URLSearchParams(window.location.search);
@@ -34,11 +36,15 @@ const Checkout = ({ event, userId}: {event: IEvent, userId:string}) => {
         }
         
   return (
-   <form action={onCheckout} method='post'>
-    <Button>
-        {event.isFree ? 'Book visit' : 'Buy ticket'}
-    </Button>
-   </form>
+    <>
+      {showContact ? (
+        <ContactPage />
+      ) : (
+        <Button onClick={() => setShowContact(true)}>
+          {event.isFree ? 'Book visit' : 'Book visit'}
+        </Button>
+      )}
+    </>
   )
 }
 

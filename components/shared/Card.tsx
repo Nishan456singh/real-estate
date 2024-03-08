@@ -6,7 +6,6 @@ import Image from 'next/image'
 import { auth } from '@clerk/nextjs'
 import { DeleteConfirmation } from './DeleteConfirmation'
 
-
 type CardProps = {
   event: IEvent,
   hasOrderLink?: boolean,
@@ -65,8 +64,6 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
             {event.title}
           </p>
         </Link>
-
-
 
         <div className="flex-between w-full">
           <p className="p-medium-14 md:p-medium-16 text-grey-600">

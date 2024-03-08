@@ -25,7 +25,7 @@ const testimonialCards = [
       quote:
         'As a real estate investor, finding the right partner can be challenging, but this agency matched me with an agent who truly understands my investment goals and challenges.',
       name: 'Emily Taylor',
-      title: 'Investor:',
+      title: 'Investor',
     },
     {
       quote:

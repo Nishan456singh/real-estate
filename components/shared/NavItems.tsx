@@ -1,12 +1,15 @@
 'use client';
 
-import { headerLinks } from '@/constants'
+import { useUser } from '@clerk/clerk-react';
+import { headerLinks } from '../../constants/index';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
-const NavItems = () => {
-  const pathname = usePathname()
+const NavItems: React.FC = () => {
+  const { user } = useUser();
+  const userId = user?.id ?? '';
+  const pathname = usePathname();
 
   return (
     <ul className='md:flex-between flex w-full flex-col items-start
@@ -14,6 +17,10 @@ const NavItems = () => {
       {headerLinks.map((link) => {
         const isActive = pathname === link.route;
 
+        // If the link label is 'Create Event' and the user ID is not the admin's ID, don't render the link
+        if (link.label === 'Create Event' && userId !== 'user_2ct5hLVHaAAsZARjyvBTuB9CO5y') {
+          return null;
+        }
 
         return (
           <li

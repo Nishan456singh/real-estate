@@ -16,7 +16,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
 
 
   const events = await getAllEvents({
-    query: '',
+    query: searchText,
     limit: 6,
     page,
     category
@@ -48,7 +48,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          {/* <Search /> */}
+          <Search />
           <CategoryFilter />
         </div>
         <Collection

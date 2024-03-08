@@ -1,34 +1,61 @@
 "use client"
 
 import { useState } from 'react';
-import axios from 'axios';
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const sendEmail = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
+    setSuccess('');
+    if (!email){
+      setError('Please enter your email');
+      return;
+    }
+    if (!message){
+      setError('Please enter your message');
+      return;
+    }
+    const templateParams = {
+      from_name: email,
+      to_name: 'Simranjit Saini',
+      message,
+    };
 
+    setError('');
+    setIsLoading(true);
     try {
-      await axios.post('/api/contact', { name, email, message });
-      alert('Message sent successfully!');
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID?? "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID?? "",
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      );
+      setSuccess('Your message has been sent');
       setName('');
       setEmail('');
       setMessage('');
     } catch (error) {
-      alert('An error occurred. Please try again later.');
+      setError('Failed to send your message');
+      console.log(error);
     }
+    setIsLoading(false);
   };
-
-
 
   return (
    <section className='border bg-set'>
     <h1 className='h2-bold mt-12 ml-7'>Contact Us</h1>
      <div className='mt-2 flex flex-col-reverse gap-10 items-center xl:ml-4 md:ml-1 sm:ml-0 '>
-      <form onSubmit={handleSubmit}  className='mt-12 flex flex-col gap-8'>
+      <form onSubmit={sendEmail}  className='mt-12 flex flex-col gap-8'>
+        {success && <div className="alert alert-success">{success}</div>}
+        {error && <div className="alert alert-error">{error}</div>}
         <label className='flex flex-col'>
           <span className='font-medium mb-4'>Your Name</span>
           <input
@@ -61,7 +88,6 @@ const ContactPage = () => {
         </div>
       </form>
     </div>
-    
    </section>
   );
 }

@@ -50,7 +50,7 @@ const ContactPage = () => {
   };
 
   return (
-   <section className='border border-black rounded-lg bg-set'>
+   <section className='border border-shadow rounded-lg bg-set'>
     <h1 className='h2-bold mt-12 ml-7'>Contact Us</h1>
      <div className='mt-2 flex flex-col-reverse gap-10 items-center xl:ml-4 md:ml-1 sm:ml-0 '>
       <form onSubmit={sendEmail}  className='mt-12 flex flex-col gap-8'>

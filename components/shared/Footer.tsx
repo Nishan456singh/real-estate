@@ -23,7 +23,7 @@ const Footer = () => {
   <p>
     © 2024. All rights reserved. <strong> Design & Developed by </strong> 
     <Link href="https://nishansingh.pro">
-      <a>Nishan Singh</a>
+      <a className="underline text-indigo-600"> Nishan Singh</a>
     </Link>
   </p>
 </div>

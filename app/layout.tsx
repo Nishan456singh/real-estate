@@ -10,10 +10,10 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Simranjit Saini',
-  description: 'We find the best homes for you, faster then making butter chicken.',
+  title: 'Aura',
+  description: 'Aura is a fashion sense',
   icons: {
-    icon: 'S'
+    icon: '/favicon.ico',
   }
 }
 

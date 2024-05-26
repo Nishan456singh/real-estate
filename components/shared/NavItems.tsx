@@ -18,14 +18,14 @@ const NavItems: React.FC = () => {
         const isActive = pathname === link.route;
 
         // If the link label is 'Create Event' and the user ID is not the admin's ID, don't render the link
-        if (link.label === 'Create Event' && userId !== 'user_2ct5hLVHaAAsZARjyvBTuB9CO5y') {
+        if (link.label === 'Create Event' && userId !== 'user_2cOWqVtT5wGWLBd1F5Gs1ORGLMo') {
           return null;
         }
 
         return (
           <li
             key={link.route}
-            className={`${isActive && 'text-primary-500'
+            className={`${isActive && 'text-gray-600'
               } flex-center p-medium-16 whitespace-nowrap`}
           >
             <Link href={link.route}>{link.label}</Link>

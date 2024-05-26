@@ -19,12 +19,10 @@ const Footer = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-6 p-4">
+      <div className="flex justify-center mt-6">
         <p>
           © 2024. All rights reserved. <strong> Design & Developed by </strong>
-          <Link href="https://nishansingh.pro">
-            <a className="underline text-indigo-600"> Nishan Singh</a>
-          </Link>
+          <Link href="https://your-link.com">Nishan Singh</Link>
         </p>
       </div>
     </footer>

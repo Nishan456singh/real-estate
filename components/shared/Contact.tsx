@@ -25,7 +25,7 @@ const ContactPage = () => {
     }
     const templateParams = {
       from_name: email,
-      to_name: 'Simranjit Saini',
+      to_name: 'Nishan singh',
       message,
     };
 

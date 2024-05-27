@@ -7,24 +7,22 @@ import MobileNav from "./MobileNav"
 
 const Header = () => {
   return (
-    <header className="w-full border-b bg-gray-50">
-      <div className="wrapper flex items-center justify-between">
-        <Link href="/" className="w-full">
+    <header className="fixed w-full bg-gray-50 z-10">
+      <div className="flex items-center justify-around">
+        <Link href="/" className="">
           <Image src="/assets/images/Logo.svg" width={130} height={24}
-            alt="Logo" />
+            alt="Logo"
+            className="rounded-full" />
         </Link>
 
-        <SignedIn>
-          <nav className="md:flex-between hidden w-full max-w-xs">
-            <NavItems />
-          </nav>
-        </SignedIn>
 
-        <div className="flex w-32 justify-end gap-3">
-          <SignedIn>
-            <UserButton afterSignOutUrl="/" />
-            <MobileNav />
-          </SignedIn>
+        <nav className="md:flex-between hidden w-full max-w-xs">
+          <NavItems />
+        </nav>
+
+        <div className="flex w-30 items-center">
+          <UserButton afterSignOutUrl="/" />
+
           <SignedOut>
             <Button asChild className="rounded-full" size="lg">
               <Link href="/sign-in">
@@ -32,7 +30,9 @@ const Header = () => {
               </Link>
             </Button>
           </SignedOut>
+          <MobileNav />
         </div>
+        
       </div>
     </header>
   )

@@ -1,6 +1,3 @@
-import instagram from '@/public/assets/icons/instagram.png';
-import tiktok from '@/public/assets/icons/tiktok.png';
-import facebook from '@/public/assets/icons/facebook.png';
 
 
 export const headerLinks = [
@@ -16,6 +13,17 @@ export const headerLinks = [
     label: 'My Profile',
     route: '/profile',
   },
+  {
+    label: 'Men',
+    route: '/men',
+  },
+  {
+    label: 'Women',
+    route: '/women',
+  }, {
+    label: 'Kids',
+    route: '/kids',
+  },
 ]
   
   export const eventDefaultValues = {
@@ -30,22 +38,3 @@ export const headerLinks = [
     isFree: false,
     url: '',
   }
-
-  export const socialLinks = [
-    {
-      name: 'TikTok',
-      iconUrl: tiktok,
-      link: 'https://www.tiktok.com',
-    },
-    {
-      name: 'Facebook',
-      iconUrl: facebook,
-      link: 'https://www.facebook.com',
-    },
-    {
-        name: 'Instagram',
-        iconUrl: instagram,
-        link: 'https://www.instagram.com',
-    },
-    
-];

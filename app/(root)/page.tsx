@@ -39,7 +39,6 @@ export default async function Home({ searchParams }: SearchParamProps) {
           page={page}
           totalPages={events?.totalPages} />
         <TestimonialCards />
-        <Contact />
       </section>
     </>
   )

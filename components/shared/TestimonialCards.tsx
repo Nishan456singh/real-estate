@@ -10,19 +10,34 @@ type Review = {
 };
 
 const GoogleReviews = () => {
-  const [reviews, setReviews] = useState<Review[]>([]);
+  const [reviews, setReviews] = useState<Review[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const { data } = await axios.get(
-        `https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJW6c_TQPchVQR4JjVq5hIi9I&fields=review&key=AIzaSyB9Uim_Tz_rDsJGI-ia54ozxcs0vkTrjYY`
-      );
+      try {
+        const { data } = await axios.get('/google/review');
 
-      setReviews(data.result.reviews);
+        if (Array.isArray(data)) {
+          setReviews(data);
+        } else {
+          setError('API response is not an array');
+        }
+      } catch (error) { 
+        return error
+      }
     };
 
     fetchReviews();
   }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!reviews) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

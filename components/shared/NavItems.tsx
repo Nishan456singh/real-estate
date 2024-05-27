@@ -21,6 +21,9 @@ const NavItems: React.FC = () => {
         if (link.label === 'Create Event' && userId !== 'user_2cOWqVtT5wGWLBd1F5Gs1ORGLMo') {
           return null;
         }
+        if (link.label === 'My Profile' && !userId) {
+          return null;
+        }
 
         return (
           <li

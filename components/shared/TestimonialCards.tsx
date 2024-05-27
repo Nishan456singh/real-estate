@@ -1,56 +1,35 @@
-"use client"
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+"use client";
+import React from "react";
+import { SparklesCore } from "../ui/sparkles";
 
-type Review = {
-  author_name: string;
-  profile_photo_url: string;
-  rating: number;
-  text: string;
-};
-
-const GoogleReviews = () => {
-  const [reviews, setReviews] = useState<Review[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        const { data } = await axios.get('/google/review');
-
-        if (Array.isArray(data)) {
-          setReviews(data);
-        } else {
-          setError('API response is not an array');
-        }
-      } catch (error) { 
-        return error
-      }
-    };
-
-    fetchReviews();
-  }, []);
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
-  if (!reviews) {
-    return <div>Loading...</div>;
-  }
-
+function SparklesPreview() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {reviews.map((review, index) => (
-        <div key={index} className="p-4 border rounded shadow">
-          <img src={review.profile_photo_url} alt={review.author_name} className="w-12 h-12 rounded-full" />
-          <p className="font-bold">{review.author_name}</p>
-          <p className="text-yellow-500">{'⭐'.repeat(review.rating)}</p>
-          <p>{review.text}</p>
-        </div>
-      ))}
+    <div className=" bg-black flex flex-col items-center justify-center">
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20 mt-10">
+        Aura
+      </h1>
+      <div className="w-[40rem] h-40 relative">
+        {/* Gradients */}
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+        <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+        <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+        {/* Core component */}
+        <SparklesCore
+          background="transparent"
+          minSize={0.4}
+          maxSize={1}
+          particleDensity={1200}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+
+        {/* Radial Gradient to prevent sharp edges */}
+        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+      </div>
     </div>
   );
-};
+}
 
-export default GoogleReviews;
+export default SparklesPreview;

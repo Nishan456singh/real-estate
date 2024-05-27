@@ -4,13 +4,28 @@ import Image from 'next/image'
 import { Input } from '../ui/input';
 import { formUrlQuery, removeKeysFromQuery } from '@/lib/utils';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { PlaceholdersAndVanishInput } from "../ui/placeholders-and-vanish-input"
 
+const Search = ({ placeholders = [
+        "What's on your mind?",
+        "What are you looking for?",
+        "Find your perfect outfit?",
+        "What are you looking for?",
+        "Find your perfect outfit?",
+    ]}: { placeholders?: string[] }) => {
 
-const Search = ({ placeholder = 'Search title...'}: { placeholder?: string}) => {
     const [query, setQuery] = useState("");
     const searchParams = useSearchParams();
     const router = useRouter();
+    
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        console.log(e.target.value);
+      };
 
+      const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        console.log("submitted");
+      };
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
             let newUrl = "";
@@ -34,22 +49,19 @@ const Search = ({ placeholder = 'Search title...'}: { placeholder?: string}) => 
 
     }, [query, searchParams, router])
 
-  return (
-    <div className='flex-center min-h-[54px] w-full overflow-hidden rounded-full bg-grey-50 px-4 py-2'>
-        <Image 
-        src="/assets/icons/search.svg" 
-        alt="search" 
-        width={24} 
-        height={24} 
-        />
-        <Input 
-        type="text"
-        placeholder={placeholder}
-        onChange={(e) => setQuery(e.target.value)}
-        className='p-regular-16 border-0 bg-grey-50 outline-offset-0 placeholder:text-green-500 focus-visible:ring-0
-        focus-visible:ring-offset-0'/>
+return (
+    <div className="flex flex-col justify-center  items-center px-4">
+      <h2 className="mb-10 sm:mb-20 text-xl text-center sm:text-5xl dark:text-white text-black">
+        Search for your favorite products
+      </h2>
+            <PlaceholdersAndVanishInput
+            placeholders={placeholders} 
+            onChange={(e) => setQuery(e.target.value)}
+            onSubmit={onSubmit}
+           />
+            
     </div>
-  )
+)
 }
 
 export default Search

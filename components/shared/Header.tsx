@@ -8,7 +8,7 @@ import MobileNav from "./MobileNav"
 
 const Header = () => {
   return (
-    <header className="fixed w-full h-0 bg-gray-50 z-10">
+    <header className="relative w-full  bg-gray-50 z-10">
       <div className="flex items-center justify-around">
         <Link href="/" className="">
           <Image src="/assets/images/Logo.svg" width={130} height={24}

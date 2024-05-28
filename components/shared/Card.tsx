@@ -21,12 +21,12 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
 
   return (
     <div className="group relative flex min-h-[380px] w-full max-w-[400px] 
-    flex-col overflow-hidden rounded-xl bg-white shadow-md transition-all hover:shadow-lg 
+    flex-col overflow-hidden rounded-sm bg-white shadow-md transition-all hover:shadow-lg 
     md:min-h-[438px]">
       <Link
         href={`/events/${event._id}`}
         style={{ backgroundImage: `url(${event.imageUrl})` }}
-        className='flex-center flex-grow bg-gray-50 bg-cover bg-center text-grey-500'
+        className='flex flex-grow bg-gray-50 bg-cover bg-center text-grey-500'
       />
 
       {/* IS EVENT CREATOR */}
@@ -35,8 +35,8 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
           <Link href={`/events/${event._id}/update`}>
             <Image src="/assets/icons/edit.svg"
               alt='edit'
-              width={20}
-              height={20} />
+              width={24}
+              height={24} />
           </Link>
 
           <DeleteConfirmation eventId={event._id} />
@@ -45,40 +45,41 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
       )}
 
       <div
-        className='flex min-h-[230px] flex-col gap-3 p-5 md:gap-4'
+        className='flex flex-col gap-3 p-3 md:gap-4'
       >
         {!hidePrice && <div className="flex gap-2">
-          <span className="p-semibold-14 w-min rounded-full bg-green-100 px-4 py-1 text-green-60">
+          <span className="p-semibold-14 w-min rounded-sm bg-gray-400 px-4 py-1 text-green-60">
             {event.isFree ? 'FREE' : `$${event.price}`}
           </span>
-          <p className="p-semibold-14 w-min rounded-full bg-grey-500/10 px-4 py-1 text-grey-500 line-clamp-1">
+          <p className="p-semibold-14 w-min rounded-sm bg-grey-500/10 px-4 py-1 text-grey-500 line-clamp-1">
             {event?.category?.name}
           </p>
         </div>}
-        <p className="p-medium-16 p-medium-18 text-grey-500">
+        {/* <p className="p-medium-16 p-medium-18 text-grey-500">
           {formatDateTime(event.startDateTime).dateTime}
-        </p>
+        </p> */}
 
         <Link href={`/events/${event._id}`}>
           <p className="p-medium-16 md:p-medium-20 line-clamp-2 flex-1 text-black">
             {event.title}
           </p>
         </Link>
-
-        <div className="flex-between w-full">
+          
+          <div className="flex-between w-full">
           <p className="p-medium-14 md:p-medium-16 text-grey-600">
-            {event.organizer.firstName} {event.organizer.lastName}
-          </p>
+            {event.description}
+          </p> 
 
           {hasOrderLink && (
             <Link href={`/orders?eventId=${event._id}`} className="flex gap-2">
-              <p className="text-primary-500">Details</p>
+              <p className="text-gray-500">Details</p>
               <Image src="/assets/icons/arrow.svg" alt="search" width={10} height={10} />
             </Link>
           )}
         </div>
       </div>
     </div>
+   
   )
 }
 

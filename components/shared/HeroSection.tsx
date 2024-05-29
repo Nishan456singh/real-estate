@@ -5,90 +5,90 @@ import { HeroParallax } from "../ui/hero-parallax";
 function HeroParallaxDemo() {
     const products = [
         {
-          title: "Moonbeam",
-          link: "",
+          title: "Men Jeans",
+          link: "/men",
           thumbnail:
             "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Cursor",
-          link:"",
+          title: "Women Jeans",
+          link:"/women",
           thumbnail:
             "https://images.pexels.com/photos/2129970/pexels-photo-2129970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Rogue",
-          link: "",
+          title: "Kids Jeans",
+          link: "/kids",
           thumbnail:
             "https://images.pexels.com/photos/52518/jeans-pants-blue-shop-52518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
       
         {
-          title: "Editorially",
-          link: "",
+          title: "Men T-Shirts",
+          link: "/men",
           thumbnail:
             "https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Editrix AI",
-          link:"",
+          title: "Women T-Shirts",
+          link:"/women",
           thumbnail:
             "https://images.pexels.com/photos/1020370/pexels-photo-1020370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Pixel Perfect",
-          link: "",
+          title: "Kids T-Shirts",
+          link: "/kids",
           thumbnail:
             "https://images.pexels.com/photos/1210484/pexels-photo-1210484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
       
         {
-          title: "Algochurn",
-          link: "",
+          title: "Men Shirts",
+          link: "/men",
           thumbnail:
             "https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Moonbeam",
-          link: "",
+          title: "Women Shirts",
+          link: "/women",
           thumbnail:
             "https://images.pexels.com/photos/1884581/pexels-photo-1884581.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Cursor",
-          link:"",
+          title: "Kids Shirts",
+          link:"/kids",
           thumbnail:
             "https://images.pexels.com/photos/2129970/pexels-photo-2129970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Rogue",
-          link: "",
+          title: "Men",
+          link: "/men",
           thumbnail:
             "https://images.pexels.com/photos/52518/jeans-pants-blue-shop-52518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
       
         {
-          title: "Editorially",
-          link: "",
+          title: "Women",
+          link: "/women",
           thumbnail:
             "https://images.pexels.com/photos/1176618/pexels-photo-1176618.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Editrix AI",
-          link:"",
+          title: "Kids",
+          link:"/kids",
           thumbnail:
             "https://images.pexels.com/photos/1020370/pexels-photo-1020370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
         {
-          title: "Pixel Perfect",
-          link: "",
+          title: "Men Jeans",
+          link: "/men",
           thumbnail:
             "https://images.pexels.com/photos/1210484/pexels-photo-1210484.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },
       
         {
-          title: "Algochurn",
-          link: "",
+          title: "Women Jeans",
+          link: "/women",
           thumbnail:
             "https://images.pexels.com/photos/3965548/pexels-photo-3965548.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
         },

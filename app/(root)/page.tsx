@@ -23,7 +23,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
   return (
     <>
       <HeroSection />
-      <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
+      <section id="events" className="wrapper my-8 flex flex-col gap-8 overflow-hidden md:gap-12">
 
         <div className="flex w-full flex-col gap-5 md:flex-row">
         <Search />

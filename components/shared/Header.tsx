@@ -11,9 +11,9 @@ const Header = () => {
     <header className="relative w-full bg-black/[0.9] z-10">
       <div className="flex items-center gap-9 justify-around">
         <Link href="/" className="">
-          <Image src="/assets/images/Logo.svg" width={130} height={24}
+          <Image src="/assets/images/Logo.svg" width={110} height={20}
             alt="Logo"
-            className="rounded-full" />
+            className="rounded-full p-2" />
         </Link>
 
         

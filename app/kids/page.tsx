@@ -5,7 +5,7 @@ import { getAllEvents } from '@/lib/actions/event.actions';
 import { SearchParamProps } from '@/types';
 import React from 'react'
 
-export async function KidsPage({ searchParams }: SearchParamProps) {
+async function KidsPage({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
   const searchText = searchParams?.query as string || "";
   const category = searchParams?.category as string || "";

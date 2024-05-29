@@ -27,7 +27,7 @@ const Header = () => {
           <UserButton afterSignOutUrl="/" />
 
           <SignedOut>
-            <Button asChild className="rounded-full" size="lg">
+            <Button asChild className="rounded-sm" size="sm">
               <Link href="/sign-in">
                 Login
               </Link>

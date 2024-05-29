@@ -4,6 +4,7 @@ import Header from '@/components/shared/Header'
 import { getAllEvents } from '@/lib/actions/event.actions';
 import { SearchParamProps } from '@/types';
 import React from 'react'
+import { getEventById, getRelatedEventsByCategory } from '@/lib/actions/event.actions';
 
 async function KidsPage({ searchParams }: SearchParamProps) {
   const page = Number(searchParams?.page) || 1;
@@ -16,6 +17,13 @@ async function KidsPage({ searchParams }: SearchParamProps) {
     page,
     category:'kids'
   });
+    const event = await getEventById(category);
+
+    const relatedEvents = await getRelatedEventsByCategory({
+        categoryId: event.category._id,
+        eventId: event._id,
+        page: searchParams.page as string,
+    })
   return (
   <>
   <Header />
@@ -29,6 +37,18 @@ async function KidsPage({ searchParams }: SearchParamProps) {
           page={page}
           totalPages={events?.totalPages} />
     </section>
+    <section className='wrapper my-8 flex flex-col gap-8 mg:gap12'>
+                <h2 className='h2-bold text-gray-600'>You May Also Like</h2>
+
+                <Collection
+                    data={relatedEvents?.data}
+                    emptyTitle="No Selection Available"
+                    emptyStateSubtext="Come back later"
+                    collectionType="All_Events"
+                    limit={3}
+                    page={searchParams.page as string}
+                    totalPages={relatedEvents?.totalPages} />
+            </section>
     <Footer />
   </>
   )

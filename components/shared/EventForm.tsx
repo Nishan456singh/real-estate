@@ -111,7 +111,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
             render={({ field }) => (
               <FormItem className="w-full">
                 <FormControl>
-                  <Input placeholder="Property title" {...field} className="input-field" />
+                  <Input placeholder="Item title" {...field} className="input-field" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -177,7 +177,7 @@ const EventForm = ({ userId, type, event, eventId }: EventFormProps) => {
                         height={24}
                       />
 
-                      <Input placeholder="Property location or Online" {...field} className="input-field" />
+                      <Input placeholder="InStore or Online" {...field} className="input-field" />
                     </div>
 
                   </FormControl>

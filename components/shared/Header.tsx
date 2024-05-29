@@ -8,12 +8,12 @@ import MobileNav from "./MobileNav"
 
 const Header = () => {
   return (
-    <header className="relative w-full bg-gray-50 z-10">
+    <header className="relative w-full bg-black/[0.9] z-10">
       <div className="flex items-center gap-9 justify-around">
         <Link href="/" className="">
           <Image src="/assets/images/Logo.svg" width={130} height={24}
             alt="Logo"
-            className="rounded-full bg-black/[0.9]" />
+            className="rounded-full" />
         </Link>
 
         

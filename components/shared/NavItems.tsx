@@ -12,7 +12,7 @@ const NavItems: React.FC = () => {
   const pathname = usePathname();
 
   return (
-    <ul className='md:flex-between flex w-full flex-col items-start
+    <ul className='md:flex-between flex w-full flex-col text-white items-start
     gap-5 md:flex-row'>
       {headerLinks.map((link) => {
         const isActive = pathname === link.route;
@@ -28,7 +28,7 @@ const NavItems: React.FC = () => {
         return (
           <li
             key={link.route}
-            className={`${isActive && 'text-gray-600'
+            className={`${isActive && 'text-gray-300'
               } flex-center p-medium-16 whitespace-nowrap`}
           >
             <Link href={link.route}>{link.label}</Link>

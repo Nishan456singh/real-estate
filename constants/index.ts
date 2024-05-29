@@ -24,6 +24,10 @@ export const headerLinks = [
     label: 'Kids',
     route: '/kids',
   },
+  {
+    label: 'Help',
+    route: '/contact',
+  },
 ]
   
   export const eventDefaultValues = {

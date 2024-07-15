@@ -4,9 +4,9 @@ import { SparklesCore } from "../ui/sparkles";
 
 function SparklesPreview() {
   return (
-    <div className=" bg-black flex flex-col items-center justify-center">
-      <h1 className="md:text-7xl text-3xl lg:text-9xl font-bold text-center text-white relative z-20 mt-4">
-        Aura
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="md:text-7xl text-3xl lg:text-9xl font-mono text-center text-black relative z-20 mt-4">
+        aura
       </h1>
       <div className="w-[40rem] h-10 relative">
         {/* Gradients */}
@@ -18,15 +18,15 @@ function SparklesPreview() {
         {/* Core component */}
         <SparklesCore
           background="transparent"
-          minSize={0.4}
+          minSize={1}
           maxSize={1}
           particleDensity={1200}
           className="w-full h-full"
-          particleColor="#FFFFFF"
+          particleColor="#000000"
         />
 
         {/* Radial Gradient to prevent sharp edges */}
-        <div className="absolute inset-0 w-full h-full bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
+        <div className="absolute inset-0 w-full h-full [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
       </div>
     </div>
   );

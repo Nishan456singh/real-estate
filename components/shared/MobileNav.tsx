@@ -20,7 +20,7 @@ const MobileNav = () => {
                     src="/assets/icons/menu.svg" 
                     width={24} height={24} 
                     alt="Menu" 
-                    className="cursor-pointer"
+                    className="cursor-pointer bg-neutral-500"
                     />
                 </SheetTrigger>
                 <SheetContent className="flex flex-col gap-6 bg-white md:hidden">

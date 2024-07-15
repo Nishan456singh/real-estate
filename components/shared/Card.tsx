@@ -21,7 +21,7 @@ const Card = ({ event, hasOrderLink, hidePrice }: CardProps) => {
 
   return (
     <div className="group relative flex min-h-[380px] w-full max-w-[400px] 
-    flex-col overflow-hidden bg-white shadow-lg transition-all hover:shadow-lg hover:scale-95
+    flex-col overflow-hidden bg-white shadow-lg transition-all hover:shadow-lg hover:scale-95 rounded-md border border-b
     md:min-h-[438px]">
       <Link
         href={`/events/${event._id}`}
